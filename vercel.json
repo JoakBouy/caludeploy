@@ -1,29 +1,14 @@
 {
-    "builds": [{
-        "src": "clubs_and_events/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    }],
+    "builds": [
+        {
+            "src": "backend/main.py",
+            "use": "@vercel/python"
+        }
+    ],
     "routes": [
         {
-            "src": "^/admin/(.*)",
-            "dest": "clubs_and_events/wsgi.py"
-        },
-        {
-            "src": "^/api/(.*)",
-            "dest": "clubs_and_events/wsgi.py"
-        },
-        {
-            "src": "^/swagger/(.*)",
-            "dest": "clubs_and_events/wsgi.py"
-        },
-        {
-            "src": "^/redoc/(.*)",
-            "dest": "clubs_and_events/wsgi.py"
-        },
-        {
             "src": "/(.*)",
-            "dest": "clubs_and_events/wsgi.py"
+            "dest": "/backend/main.py"
         }
     ]
 }
