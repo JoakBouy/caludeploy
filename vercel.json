@@ -6,6 +6,22 @@
     }],
     "routes": [
         {
+            "src": "^/admin/(.*)",
+            "dest": "clubs_and_events/wsgi.py"
+        },
+        {
+            "src": "^/api/(.*)",
+            "dest": "clubs_and_events/wsgi.py"
+        },
+        {
+            "src": "^/swagger/(.*)",
+            "dest": "clubs_and_events/wsgi.py"
+        },
+        {
+            "src": "^/redoc/(.*)",
+            "dest": "clubs_and_events/wsgi.py"
+        },
+        {
             "src": "/(.*)",
             "dest": "clubs_and_events/wsgi.py"
         }
